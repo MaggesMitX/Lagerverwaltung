@@ -1,9 +1,12 @@
-
+/**
+ * Klasse zum verwalten des Lagers
+ */
 public class Lager {
 
-   private Artikel[] artikelListe;
+   private Artikel[] artikelListe;          /*may be final: Kann mit einer Konstante versehen werden, wenn nötig.*/
 
     /**
+     * Größe des Lagers
      * @param size Konstruktor: ist die Größe des Lagers, was man im SourceCode angeben kann.
      * Hiermit wird die Größe des Arrays bestimmt.
      */
@@ -12,7 +15,8 @@ public class Lager {
    }
 
     /**
-     * @return Diese this Methode returnt immer die aktuelle Liste mit dem Size Wert,
+     * Gibt die Artikelliste aus
+     * @return Diese this Methode returned immer die aktuelle Liste mit dem Size Wert,
      * welchen man oben eingeben kann.
      */
    public Artikel[] getArtikelListe(){
@@ -20,12 +24,13 @@ public class Lager {
    }
 
     /**
+     * Fügt Artikel hinzu
      * @param artikel Checkt ob in meiner Artikelliste ein Nullpointer ist.
      */
    public void addArtikel(Artikel artikel){
        for (int i = 0; i < artikelListe.length; i++) {
 
-           if (artikelListe[i] == null){            /**/
+           if (artikelListe[i] == null){            /*Schleife geht durch Array, wenn kein Inhalt vorhanden ist, wird der Artikel hinzugefügt*/
                artikelListe[i] = artikel;
                break;
            }
@@ -33,6 +38,7 @@ public class Lager {
    }
 
     /**
+     * Suche Artikel aus Lager
      * @param name Mit dieser Methode wo name enthalten ist kann der benutzer einen Artikel finden
      * welcher im Array ist
      * @return
@@ -50,6 +56,7 @@ public class Lager {
    }
 
     /**
+     * Entferne Artikel aus Lager
      * @param artikel Hier werden die Artikel(a) aus dem Array in einer for Schleife durchlaufen,
      * Ist auch == "ruft equals auf".
      */
